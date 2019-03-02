@@ -15,9 +15,9 @@ async def test(request):
 async def test(request):
     return await response.file('./website/index.html')
 
-@app.route('/json')
-def post_json(request):
-    return json("received": True, "message": request.json)
+@app.route("/json")
+def handle_request(request):
+    return response.json({"hello": "world"})
 
 app.static("/website", "./website")
 app.run("127.0.0.1", port=80)
