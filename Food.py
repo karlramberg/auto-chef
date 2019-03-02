@@ -4,7 +4,7 @@
 class Food:
     def __init__(self, name, category, weight):
         self.name = name
-        self.category = catergory
+        self.category = category
         self.weight = weight
 
     def changeWeight(self, newWeight):
