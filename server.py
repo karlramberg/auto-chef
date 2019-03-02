@@ -1,9 +1,10 @@
 # karl ramberg, paul ramberg, trenton morgan, isaih slater
 # pickhacks 2019 - 3/1/2019
-
+import generator
 from sanic import Sanic
 from sanic import response
 from sanic.response import json
+
 
 app = Sanic()
 
@@ -17,7 +18,8 @@ async def test(request):
 
 @app.route("/json")
 def handle_request(request):
-    return response.json({"hello": "world"})
+    return response.json(generator.newRecipe())
 
+generator.generateJsonFile()
 app.static("/website", "./website")
 app.run("127.0.0.1", port=80)
