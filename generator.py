@@ -11,7 +11,7 @@ diet = []
 def getTokens(path):
     return open(path).read().splitlines()
 
-def generateJsonFile():
+def setDiet():
 
     for x in range(5):
         if x == 0:
@@ -51,8 +51,8 @@ def generateJsonFile():
 
             diet.append(Food(token, category, weight, probability))
 
-    json_file = open("diet.json", "w")
-    json_file.write(json.dumps([ob.__dict__ for ob in diet], indent = 4))
+    #json_file = open("diet.json", "w")
+    #json_file.write(json.dumps([ob.__dict__ for ob in diet], indent = 4))
 
 def newRecipe():
     recipe = []
@@ -60,7 +60,6 @@ def newRecipe():
         index = random.randint(0, len(diet)-1)
         recipe.append(diet[index])
 
-    print(json.dumps([ob.__dict__ for ob in recipe]))
     return json.dumps([ob.__dict__ for ob in recipe])
 
 if __name__ == '__main__':

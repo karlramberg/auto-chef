@@ -18,8 +18,8 @@ async def test(request):
 
 @app.route("/json")
 def handle_request(request):
-    return response.text(generator.newRecipe())
+    return response.json(generator.newRecipe())
 
-generator.generateJsonFile()
+generator.setDiet()
 app.static("/website", "./website")
 app.run("127.0.0.1", port=80)
