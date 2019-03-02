@@ -1,8 +1,7 @@
 # karl ramberg, paul ramberg, trenton morgan, isaih slater
 # pickhacks 2019 - 3/1/19
+import json
 from Food import Food
-from pprint import PrettyPrinter
-pp = PrettyPrinter()
 
 def getTokens(path):
     return open(path).read().splitlines()
@@ -47,4 +46,5 @@ for x in range(5):
 
         diet.append(Food(token, category, weight, probability))
 
-pp.pprint(diet)
+json_file = open("diet.json", "w")
+json_file.write(json.dumps([ob.__dict__ for ob in diet], indent = 4))
