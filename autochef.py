@@ -1,6 +1,8 @@
 # karl ramberg, paul ramberg, trenton morgan
 # pickhacks 2019 - 3/1/19
 from Food import Food
+from pprint import PrettyPrinter
+pp = PrettyPrinter()
 
 def getTokens(path):
     return open(path).read().splitlines()
@@ -40,4 +42,4 @@ for x in range(5):
 
         diet.append(Food(token, category, weight))
 
-print(diet)
+pp.pprint(diet)
