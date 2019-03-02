@@ -18,7 +18,7 @@ async def test(request):
 
 @app.route("/json")
 def handle_request(request):
-    return response.json(generator.newRecipe())
+    return response.text(generator.newRecipe())
 
 generator.setDiet()
 app.static("/website", "./website")
