@@ -1,8 +1,0 @@
-carrot
-cucumber
-tomato
-corn
-squash
-lettuce
-onion
-potato
