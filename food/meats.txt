@@ -1,8 +1,8 @@
-beef
-chicken
-pork
-fish
-lamb
-shrimp
-turkey
-rabbit
+Beef
+Chicken
+Pork
+Fish
+Lamb
+Shrimp
+Turkey
+Rabbit

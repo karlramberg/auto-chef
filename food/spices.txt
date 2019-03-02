@@ -1,8 +1,8 @@
-oregano
-cinnamon
-chives
-parsley
-basil
-thyme
-cayenne
-garlic
+Oregano
+Cinnamon
+Chives
+Parsley
+Basil
+Thyme
+Cayenne
+Garlic
