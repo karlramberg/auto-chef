@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 </head>
 
-<body>
+<body onload="updatePage()">
 <div id="container">
 
 <img src="/website/chefHat.gif" alt=" ">
@@ -19,28 +19,47 @@
 <main>
     <h2>Ingredients:</h2>
     <ul id="ingredients">
-        <li>Chicken</li>
-        <li>Carrots</li>
-        <li>Oregano</li>
-        <li>Noodles</li>
     </ul>
     <p>Would you make this recipie?</p>
     <nav>
-        <button type="button" onclick="updatePage()" id="yes">Yes</button>
-        <button type="button" onclick="updatePage()" id="try">I'll try anything once.</button>
-        <button type="button" onclick="updatePage()" id="no">No</button>
+        <button type="button" onclick="yesPress()" id="yes">Yes</button>
+        <button type="button" onclick="maybePress()" id="try">I'll try anything once.</button>
+        <button type="button" onclick="noPress()" id="no">No</button>
     </nav>
 </main>
 
 </div>
 
 <script>
+var currentJson;
+
+function yesPress() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/jsonyes", true);
+    xhttp.send(currentJson);
+    updatePage();
+}
+
+function maybePress() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/jsonmaybe", true);
+    xhttp.send(currentJson);
+    updatePage();
+}
+
+function noPress() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/jsonno", true);
+    xhttp.send(currentJson);
+    updatePage();
+}
 function updatePage() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
+            console.log(this.responseText);
             var objs = JSON.parse(this.responseText);
+            currentJson = this.responseText;
             var list = "";
             objs.forEach(function(i) {
                 list += `<li> ${i.name} </li>`
@@ -48,7 +67,7 @@ function updatePage() {
             document.getElementById("ingredients").innerHTML = list;
         }
     };
-    xhttp.open("GET", "/json", true);
+    xhttp.open("GET", "/jsonget", true);
     xhttp.send();
 }
 </script>

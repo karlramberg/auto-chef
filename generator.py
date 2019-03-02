@@ -33,7 +33,7 @@ def setDiet():
                 category = "meats"
                 probability = 0.05
             elif x == 1:
-                weight = 0.4
+                weight = 0.35
                 category = "carbs"
                 probability = 0.05
             elif x == 2:
@@ -51,15 +51,18 @@ def setDiet():
 
             diet.append(Food(token, category, weight, probability))
 
-    #json_file = open("diet.json", "w")
-    #json_file.write(json.dumps([ob.__dict__ for ob in diet], indent = 4))
+    return diet
 
 def newRecipe():
     recipe = []
-    for x in range(4):
-        index = random.randint(0, len(diet)-1)
-        recipe.append(diet[index])
-         
+    totalWeight = 0.0
+    while totalWeight < 1.0 or len(recipe) < 3:
+        foodIndex = random.randint(0, len(diet)-1)
+        if(diet[foodIndex].probability > random.uniform(0.0, 1.0)):
+            recipe.append(diet[foodIndex])
+            totalWeight += diet[foodIndex].weight
+
+    print(totalWeight)
     return json.dumps([ob.__dict__ for ob in recipe])
 
 if __name__ == '__main__':

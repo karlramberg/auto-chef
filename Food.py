@@ -8,5 +8,5 @@ class Food:
         self.weight = weight
         self.probability = probability
 
-    def setWeight(self, weight):
-        self.weight = weight
+    def setProbability(self, probability):
+        self.probability = probability
