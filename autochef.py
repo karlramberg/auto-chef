@@ -27,19 +27,24 @@ for x in range(5):
         if x == 0:
             weight = 0.6
             category = "meats"
+            probability = 0.05
         elif x == 1:
             weight = 0.4
             category = "carbs"
+            probability = 0.05
         elif x == 2:
             weight = 0.15
             category = "vegetables"
+            probability = 0.05
         elif x == 3:
             weight = 0.15
             category = "fruits"
+            probability = 0.05
         else:
             weight = 0.05
             category = "spices"
+            probability = 0.05
 
-        diet.append(Food(token, category, weight))
+        diet.append(Food(token, category, weight, probability))
 
 pp.pprint(diet)
