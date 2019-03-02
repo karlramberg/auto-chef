@@ -6,3 +6,15 @@ Squash
 Lettuce
 Onion
 Potato
+Broccoli
+Celery
+Cabbage
+Kale
+Asparagus
+Cauliflower
+Spinach
+Eggplant
+Radish
+Peppers
+Zucchini
+Peas
