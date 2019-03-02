@@ -1,8 +1,17 @@
-Beef
-Chicken
-Pork
-Fish
+Roast Beef
+Steak
+Ground Beef
+Fried Chicken
+Broiled Chicken
+Porkchop
+Ham
+Bacon
+Salmon
+Trout
 Lamb
 Shrimp
+Squid
 Turkey
 Rabbit
+Venison
+Sausage
