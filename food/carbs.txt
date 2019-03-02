@@ -1,4 +1,4 @@
-noodles
-bread
-cheese
-rice
+Noodles
+Bread
+Cheese
+Rice

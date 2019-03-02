@@ -1,7 +1,7 @@
-pineapple
-orange
-cherrys
-banana
-apple
-strawberry
-kiwi
+Pineapple
+Orange
+Cherries
+Banana
+Apple
+Strawberry
+Kiwi

@@ -1,8 +1,8 @@
-carrot
-cucumber
-tomato
-corn
-squash
-lettuce
-onion
-potato
+Carrot
+Cucumber
+Tomato
+Corn
+Squash
+Lettuce
+Onion
+Potato
