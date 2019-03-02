@@ -39,13 +39,16 @@ function updatePage() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("ingredients").innerHTML =
-            this.responseText;
-            console.log(this.responseText);
+            console.log(this.responseText)
+            var objs = JSON.parse(this.responseText);
+            var list = "";
+            objs.forEach(function(i) {
+                list += `<li> ${i.name} </li>`
+            });
+            document.getElementById("ingredients").innerHTML = list;
         }
     };
     xhttp.open("GET", "/json", true);
-
     xhttp.send();
 }
 </script>

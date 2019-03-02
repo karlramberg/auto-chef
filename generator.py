@@ -59,7 +59,7 @@ def newRecipe():
     for x in range(4):
         index = random.randint(0, len(diet)-1)
         recipe.append(diet[index])
-
+         
     return json.dumps([ob.__dict__ for ob in recipe])
 
 if __name__ == '__main__':
