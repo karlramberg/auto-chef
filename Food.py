@@ -1,4 +1,4 @@
-# karl ramberg, paul ramberg, trenton morgan
+# karl ramberg, paul ramberg, trenton morgan, isaih slater
 # pickhacks 2019 - 3/1/19
 
 class Food:
