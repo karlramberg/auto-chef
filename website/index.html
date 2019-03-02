@@ -41,9 +41,11 @@ function updatePage() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("ingredients").innerHTML =
             this.responseText;
+            console.log(this.responseText);
         }
     };
     xhttp.open("GET", "/json", true);
+
     xhttp.send();
 }
 </script>
