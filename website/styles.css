@@ -78,3 +78,16 @@ button:active {
 button:focus {
     outline: 0;
 }
+
+@media screen and (max-width: 675px) {
+
+main nav {
+    display: flexbox;
+    flex-direction: column;
+}
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+}
