@@ -35,6 +35,7 @@ main ul {
     font-size: 1.3em;
     display: table;
     margin: 20px auto 0 auto;
+    height: 135px;
 }
 
 main ul li {
