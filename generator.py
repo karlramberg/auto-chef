@@ -2,11 +2,13 @@
 # pickhacks 2019 - 3/1/19
 import json
 import random
+import itertools
 from Food import Food
 from pprint import PrettyPrinter
 pp = PrettyPrinter()
 
 diet = []
+pairs = []
 
 def getTokens(path):
     return open(path).read().splitlines()
@@ -63,6 +65,13 @@ def newRecipe():
             totalWeight += diet[foodIndex].weight
 
     return json.dumps([ob.__dict__ for ob in recipe])
+
+def addPairs(ingredients):
+    names = []
+    for ingredient in ingredients:
+        names.append(ingredient["name"])
+    pairs.append(list(itertools.combinations(names, 2)))
+    print(pairs)
 
 if __name__ == '__main__':
     generateJsonFile()
