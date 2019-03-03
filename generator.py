@@ -8,6 +8,7 @@ from pprint import PrettyPrinter
 pp = PrettyPrinter()
 
 diet = []
+altDiet = []
 pairs = []
 
 def getTokens(path):
@@ -57,12 +58,16 @@ def setDiet():
 
 def newRecipe():
     recipe = []
+    altDiet = diet
     totalWeight = 0.0
-    while totalWeight < 1.0 or len(recipe) < 3:
-        foodIndex = random.randint(0, len(diet)-1)
-        if(diet[foodIndex].probability > random.uniform(0.0, 1.0)):
-            recipe.append(diet[foodIndex])
-            totalWeight += diet[foodIndex].weight
+    while totalWeight < 1.0 and len(recipe) < 5:
+        foodIndex = random.randint(0, len(altDiet)-1)
+        if(altDiet[foodIndex].probability > random.uniform(0.0, 1.0)):
+
+            findPairs(altDiet[foodIndex])
+
+            recipe.append(altDiet[foodIndex])
+            totalWeight += altDiet[foodIndex].weight
 
     return json.dumps([ob.__dict__ for ob in recipe])
 
@@ -72,6 +77,19 @@ def addPairs(ingredients):
         names.append(ingredient["name"])
     pairs.append(list(itertools.combinations(names, 2)))
     print(pairs)
+
+def findPairs(food):
+    for pair in pairs:
+        if food.name in pair:
+            if pair[0] == food.name:
+                altDiet[findFood(pair[1])].probability += 0.1
+            else:
+                altDiet[findFood(pair[0])].probability += 0.1
+
+def findFood(name):
+    for i in len(diet):
+        if diet[i].name == name:
+            return i
 
 if __name__ == '__main__':
     generateJsonFile()

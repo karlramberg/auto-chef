@@ -25,14 +25,14 @@ def handle_request(request):
 def post_handler(request):
     ingredients = json.loads(request.body)
 
-    for ingredient in ingredients:
-        for food in diet:
-            if(ingredient["name"] == food.name):
-                food.probability += 0.1
-                food.probability = chomp(food.probability, 0.01, 1.0)
+    # for ingredient in ingredients:
+    #     for food in diet:
+    #         if(ingredient["name"] == food.name):
+    #             food.probability += 0.1
+    #             food.probability = chomp(food.probability, 0.01, 1.0)
 
     generator.addPairs(ingredients);
-    
+
     return response.json({ "received": True, "message": request.json })
 
 @app.post("/jsonmaybe")
@@ -43,11 +43,11 @@ def post_json(request):
 def post_json(request):
     ingredients = json.loads(request.body)
 
-    for ingredient in ingredients:
-        for food in diet:
-            if(ingredient["name"] == food.name):
-                food.probability -= 0.1
-                food.probability = chomp(food.probability, 0.01, 1.0)
+    # for ingredient in ingredients:
+    #     for food in diet:
+    #         if(ingredient["name"] == food.name):
+    #             food.probability -= 0.1
+    #             food.probability = chomp(food.probability, 0.01, 1.0)
 
     return response.json({ "received": True, "message": request.json })
 
