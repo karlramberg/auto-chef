@@ -62,7 +62,6 @@ def newRecipe():
             recipe.append(diet[foodIndex])
             totalWeight += diet[foodIndex].weight
 
-    print(totalWeight)
     return json.dumps([ob.__dict__ for ob in recipe])
 
 if __name__ == '__main__':

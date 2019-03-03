@@ -45,7 +45,7 @@ def post_json(request):
         for food in diet:
             if(ingredient["name"] == food.name):
                 food.probability -= 0.1
-                food.probability = chomp(food.probability, 0.0, 1.0)
+                food.probability = chomp(food.probability, 0.01, 1.0)
 
     return response.json({ "received": True, "message": request.json })
 
