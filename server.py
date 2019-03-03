@@ -61,4 +61,4 @@ def chomp(num, low, high):
 
 diet = generator.setDiet()
 app.static("/website", "./website")
-app.run("127.0.0.1", port=80)
+app.run("0.0.0.0", port=80)
