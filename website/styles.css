@@ -23,13 +23,14 @@ main ul {
     padding-bottom: 20px;
     color: #FFFFFF;
     font-size: 1.3em;
-    list-style: disc;
-    max-width: 5em;
+    display: table;
+    margin: 20px auto 0 auto;
 }
+
 main ul li {
-    display: inline-block;
-    margin: 100px 10px;
+    margin: 2px ;
     text-align: left;
+    list-style: disc;
 }
 h1 {
     font-family: Lobster Two ,Arial, Helvetica, sans-serif;
