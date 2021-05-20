@@ -1,17 +1,11 @@
-# autochef
+Auto Chef is our entry into the 2019 PickHacks hackathon at Missouri S&T. It uses a custom "machine learning" algorithm based on Markov chains to generate combinations of foods that could be prepared into a meal. It starts totally random but slowly learns which combinations would be tasty based user's feedback.
 
-autochef is our entry into the 2019 PickHacks hackathon at Missouri S&T. It uses a custom "machine learning" algorithm to generate combinations of foods that could be prepared into a meal, picking the ingredients based on user input. 
+Team Members:
 
-# Team Members
-
- >[Karl](https://github.com/karledramberg)
+ >[Karl](https://github.com/karlramberg)
 
  >[Paul](https://github.com/pramberg451)
 
  >[Trenton](https://github.com/tmorgan181)
 
- >[Isiah](https://github.com/isslater)
-
-
-
-generating recipes w/ machine learning since 2019
+ >[Isiah](https://github.com/IsiahSlater)
